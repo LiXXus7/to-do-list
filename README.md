@@ -51,7 +51,7 @@ ________________________________________________________________________________
 /* ANGULAR */
 /* CLI */
 ---> globale installation der angular cli auf dem rechner (stellt unter anderem "ng-commands" zur verfügung)
-`npm install -g @angular/cli`
+###`npm install -g @angular/cli`
 
 
 /// NEUES PROJEKT ERSTELLEN
