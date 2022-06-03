@@ -28,6 +28,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 
+____________________________________________________________________________________________________________________________________
+
+
+
 
 ## //////////// FRONTEND ESSENTIALS WITH ANGULAR ///////////////
 
@@ -50,35 +54,35 @@ ________________________________________________________________________________
 
 /* ANGULAR */
 /* CLI */
----> globale installation der angular cli auf dem rechner (stellt unter anderem "ng-commands" zur verfügung)
-###`npm install -g @angular/cli`
+<br>---> globale installation der angular cli auf dem rechner (stellt unter anderem "ng-commands" zur verfügung)
+<br>`npm install -g @angular/cli`
 
 
 /// NEUES PROJEKT ERSTELLEN
----> anlegen eines angular projekts -> navigiere über das Terminal (auch Eingabeaufforderung in windows genannt) zu deinem gewünschten Verzeichnis und erstelle ein neues projekt mit folgendem befehl.
-`ng new my-project-name`
+<br>---> anlegen eines angular projekts -> navigiere über das Terminal (auch Eingabeaufforderung in windows genannt) zu deinem gewünschten Verzeichnis und erstelle ein neues projekt mit folgendem befehl.
+<br>`ng new my-project-name`
 
----> im anschluss wirst du kurz gefragt wie du das neu projekt initial konfigurieren möchtest:
+<br>---> im anschluss wirst du kurz gefragt wie du das neu projekt initial konfigurieren möchtest:
 - bei angular routing "yes"
 - browser animations kannst du auch mit "yes" beantworten
 - wähle als style am besten "SCSS" aus
 
----> nachdem das projekt erstellt wurde, öffne visual-studio-code und wähle den order mit dem projekt-namen aus
+<br>---> nachdem das projekt erstellt wurde, öffne visual-studio-code und wähle den order mit dem projekt-namen aus
   -> in visual studio kannst du anschließend das terminal öffnen und mit dem Befehl...
-`ng serve`
+<br>`ng serve`
   -> ... einen virtuellen server eröffen (http://localhost:4200) und die app starten
 
 
 /// COMPONENTEN, MODULE, SERVICES GENERIEREN
 /// MERKE: in visual studio code rechtsklick auf gewünschten ordner und "open in integrated terminal" auswählen, um direkt im richtigen verzeichnis zu landen, wo die components generiert werden sollen
----> component
-`ng generate component - oder auch: ng g c`
+<br>---> component
+<br>`ng generate component - oder auch: ng g c`
 
----> module
-`ng generate module - oder auch: ng g m`
+<br>---> module
+<br>`ng generate module - oder auch: ng g m`
 
----> service:
-`ng generate service - oder auch: ng g s`
+<br>---> service:
+<br>`ng generate service - oder auch: ng g s`
 
 
 ____________________________________________________________________________________________________________________________________
@@ -92,54 +96,54 @@ installation ( https://git-scm.com/download/win )
 ---> in der menüleiste gibt es einen reiter mit einem download icon und der information "clone".
 ---> kopiere die "http://....git" ->(pfad zu deinem git projekt)
 ---> führe in einem gewünschten ordnerverzeichnis den Befehl...
-`git clone der-kopierte-pfad`
+<br>`git clone der-kopierte-pfad`
 ...um das projekt lokal auf deinem rechner zu haben.
 ---> öffne das geklonte projekt in visual-studio-code und gehe ins terminal
 ---> um git zu initialisieren verwende:
-`git init`
+<br>`git init`
 ---> um deinen usernamen und email global zu definieren verwende:
-`git config --global user.name "dein username"`
-`git config --global user.email "deine in git verwendete email"`
+<br>`git config --global user.name "dein username"`
+<br>`git config --global user.email "deine in git verwendete email"`
 ---> um dich mit deinem repository über git zu verknüpfen verwende:
-`git remote add origin http://....git` ->(pfad zu deinem git projekt)
+<br>`git remote add origin http://....git` ->(pfad zu deinem git projekt)
 ---> mit...
-`git status`
+<br>`git status`
 ... kannst du überprüfen ob du gerade auf dem master branch bist und ob der befehl remote add funktioniert hat
 
 
 /// NODE MODULES INSTALLIEREN
 ---> um das geklonte projekt nun starten zu können, müssen noch framework dateien und verwendete libraries installiert werden...
-`npm install`
+<br>`npm install`
 ...zieht diese dateien automatisch lokal auf deinen rechner
 ---> jetzt kannst du wie gewohnt über...
-`ng serve`
+<br>`ng serve`
 ... das projekt starten und live ausprobieren
 
 
 /// GIT WORKFLOW
 ---> wenn du änderungen vornehmen möchtest und dein projekt erweiterst, branche mit...
-`git checkout -b branch-name`
+<br>`git checkout -b branch-name`
 ...vom master weg
 ---> bist du fertig verwende...
-`git add .`
+<br>`git add .`
 ... um alle deine änderungen git mitzuteilen (der punkt bei git add "." ist wichtig und darf nicht vergessen werden, dieser bedeuted dass alle deine veränderung "geadded" werden sollen)
 ---> um die veränderungen zu bestätigen verwende:
-`git commit -a -m "deine nachricht, notiz, etc. für die änderungen"`
+<br>`git commit -a -m "deine nachricht, notiz, etc. für die änderungen"`
 ---> um die veränderungen auf git hochzuladen verwende:
-`git push origin branch-name`
+<br>`git push origin branch-name`
 ---> jetzt kannst du den branch auf git in deinem repository sehen und einen pull request starten, und die veränderungen mit dem master mergen, also zusammenführen.
 ---> ist gemerged, navigieren mit...
-`git checkout master`
+<br>`git checkout master`
 ...zum masterbranch
 ---> um den aktuellen master zu holen, verwende:
-`git pull`
+<br>`git pull`
 /// MERKE: wenn gemeinsam auf einem Projekt gearbeitet wird, verwende...
-`git fetch`
+<br>`git fetch`
 ...vor git pull, um veränderungen von mitwirkenden zu registrieren
 
 ERROR FALL --> geheimtrick wenn etwas beim pushen nicht funktioniert -- folgende fehlermeldungen weisen auf das problem hin:
   --> "ERROR: Repository not found. fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists."
-`git remote set-url origin https://....git`
+<br>`git remote set-url origin https://....git`
 ... dann nochmals einen push probieren
 
 
