@@ -12,6 +12,7 @@ export class ListOverviewComponent implements OnInit, OnDestroy {
   @ViewChild('listNameInput') listNameInput: ElementRef | null = null;
 
   lists: List[] = [];
+  filteredListIds: string[] | null = [];
 
   private unsubscribe = new Subject<void>();
 
@@ -22,13 +23,24 @@ export class ListOverviewComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+    this.appService.activeSectionSubject.next('lists-overview');
+
     this.appService.listsSubject
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(lists => this.lists = lists);
+
+    this.appService.filteredListIdsSubject
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe(filteredListIds => this.filteredListIds = filteredListIds);
   }
 
   ngOnDestroy(): void {
+    this.appService.activeSectionSubject.next(null);
     this.unsubscribe.next();
+  }
+
+  getIsListFiltered(list: List) {
+    return !this.filteredListIds || this.filteredListIds.includes(list.name) || list.isEditMode;
   }
 
   editName(list: List) {
@@ -59,7 +71,7 @@ export class ListOverviewComponent implements OnInit, OnDestroy {
   }
 
   clickedList(list: any) {
-    this.router.navigate([list.name], { relativeTo: this.activedRoute });
+    this.router.navigate([list.name], { relativeTo: this.activedRoute, queryParamsHandling: 'merge' });
   }
 
   deleteList(list: List) {

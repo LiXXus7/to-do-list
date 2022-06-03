@@ -1,47 +1,49 @@
 <div class="lists">
-  <div
-    *ngFor="let list of lists"
-    class="listCard"
-    [class]="{
-      createList: list.isCreateList,
-      editMode: list.isEditMode
-    }"
-    (click)="list.isCreateList ? createList(list) : clickedList(list)"
-  >
-    <ng-container *ngIf="list.isCreateList; else listElement">
-      + Neue Kategorie erstellen
-    </ng-container>
-    <ng-template #listElement>
-      <div class="header">
-        <input
-          #listNameInput
-          *ngIf="list.isEditMode; else name"
-          [(ngModel)]="list.name"
-          (click)="$event.stopPropagation()"
-          (blur)="onNameInputBlur(list)"
-          (keydown.enter)="list.name ? onNameInputBlur(list) : null"
-        />
-        <ng-template #name>
-          <span
-            class="name"
-            (click)="$event.stopPropagation(); editName(list)"
-          >{{ list.name }}</span>
-        </ng-template>
+  <ng-container *ngFor="let list of lists">
+    <div
+      *ngIf="getIsListFiltered(list)"
+      class="listCard"
+      [class]="{
+        createList: list.isCreateList,
+        editMode: list.isEditMode
+      }"
+      (click)="list.isCreateList ? createList(list) : clickedList(list)"
+    >
+      <ng-container *ngIf="list.isCreateList; else listElement">
+        + Neue Kategorie erstellen
+      </ng-container>
+      <ng-template #listElement>
+        <div class="header">
+          <input
+            #listNameInput
+            *ngIf="list.isEditMode; else name"
+            [(ngModel)]="list.name"
+            (click)="$event.stopPropagation()"
+            (blur)="onNameInputBlur(list)"
+            (keydown.enter)="list.name ? onNameInputBlur(list) : null"
+          />
+          <ng-template #name>
+            <span
+              class="name"
+              (click)="$event.stopPropagation(); editName(list)"
+            >{{ list.name }}</span>
+          </ng-template>
 
-        <span class="numberOFTasks">{{ list.tasks.length }} Aufgaben</span>
+          <span class="numberOFTasks">{{ list.tasks.length }} Aufgaben</span>
 
-        <span class="spacer"></span>
+          <span class="spacer"></span>
 
-        <div class="tools" (click)="$event.stopPropagation()">
-          <mat-icon (click)="editName(list)">edit</mat-icon>
-          <mat-icon (click)="deleteList(list)">delete</mat-icon>
+          <div class="tools" (click)="$event.stopPropagation()">
+            <mat-icon (click)="editName(list)">edit</mat-icon>
+            <mat-icon (click)="deleteList(list)">delete</mat-icon>
+          </div>
         </div>
-      </div>
-      <div class="body">
-        <span>Aufgaben ansehen</span>
-      </div>
-    </ng-template>
-  </div>
+        <div class="body">
+          <span>Aufgaben ansehen</span>
+        </div>
+      </ng-template>
+    </div>
+  </ng-container>
 </div>
 
 <!-- <div class="footer">

@@ -6,7 +6,9 @@
 
 <div class="spacer"></div>
 
-<!-- <input
-  [(ngModel)]="inputValue"
-  placeholder="Suchen"
-/> -->
+<ng-container *ngIf="activeSection === 'lists-overview'">
+  <input
+    [(ngModel)]="inputValue"
+    placeholder="Suchen"
+  />
+</ng-container>

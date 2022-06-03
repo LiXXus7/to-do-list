@@ -40,6 +40,8 @@ export class ListDetailComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+    this.appService.activeSectionSubject.next('list-detail');
+
     this.activatedRoute.params.pipe(
       takeUntil(this.unsubscribe),
       map(params => params['id'])
@@ -51,11 +53,12 @@ export class ListDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.appService.activeSectionSubject.next(null);
     this.unsubscribe.next();
   }
 
   navigateBack() {
-    this.router.navigate(['../'], { relativeTo: this.activatedRoute });
+    this.router.navigate(['../'], { relativeTo: this.activatedRoute, queryParamsHandling: 'merge' });
   }
 
   onAddTask() {
