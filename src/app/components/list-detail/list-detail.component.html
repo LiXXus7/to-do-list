@@ -1,0 +1,43 @@
+<div class="header">
+  <div class="navigateBack" (click)="navigateBack()">
+    <mat-icon>chevron_left</mat-icon>
+    <span>Zurück zur Übersicht</span>
+  </div>
+</div>
+
+<div class="body">
+  <ng-container *ngIf="list; else listDontExist">
+    <h2>{{ list.name }}</h2>
+
+    <div class="wrapper">
+      <div class="section">
+        <h3>Offene Aufgaben</h3>
+        <app-check-list [tasks]="tasks" (action)="onChecklistAction($event)"></app-check-list>
+        <div class="addTask">
+          <span
+            *ngIf="isNewTaskInputActive === false; else newTaskInputTemplate"
+            (click)="onAddTask()"
+          >
+            + Aufgabe hinzufügen
+          </span>
+          <ng-template #newTaskInputTemplate>
+            <input
+              #newTaskInput
+              [(ngModel)]="newTaskInputValue"
+              (blur)="addTask()"
+              (keydown.enter)="newTaskInputValue ? onKeydownEnter() : null"
+            />
+          </ng-template>
+        </div>
+      </div>
+      <div class="section">
+        <h3>Erledigte Aufgaben</h3>
+        <app-check-list [tasks]="checkedTasks"  (action)="onChecklistAction($event)"></app-check-list>
+      </div>
+    </div>
+
+  </ng-container>
+  <ng-template #listDontExist>
+    Die ausgewählte Liste existiert nicht!
+  </ng-template>
+</div>

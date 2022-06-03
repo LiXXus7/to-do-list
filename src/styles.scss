@@ -1,1 +1,65 @@
+body {
+  --primary-50: #e1eefa;
+  --primary-500: #0070D2;
+  --primary-800: #0319E3;
+
+  --secondary-500: #03A9F4;
+
+  --warn-500: rgb(235, 59, 59);
+
+  --grey-50: white;
+  --grey-200: #F1F1F1;
+  --grey-300: #e9e9e9;
+  --grey-400: #b8b8b8;
+  --grey-500: #939191;
+  --grey-600: #6A6A6A;
+  --grey-700: #525252;
+  --grey-900: #131313;
+
+  // @media all and (prefers-color-scheme: dark) {
+  //   --primary-50: #e1eefa;
+  //   --primary-500: #0070D2;
+  //   --primary-800: #0319E3;
+
+  //   --secondary-500: #03A9F4;
+
+  //    --warn-500: rgb(235, 59, 59);
+
+  //   --grey-50: #1b1b1b;
+  //   --grey-200: #525252;
+  //   --grey-300: #6A6A6A;
+  //   --grey-400: #939191;
+  //   --grey-500: #b8b8b8;
+  //   --grey-600: #e9e9e9;
+  //   --grey-700: #F1F1F1;
+  //   --grey-900: #f0f0f0;
+  // }
+}
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+  margin: 0;
+  font-size: 14px;
+  color: var(--grey-900);
+  background-color: var(--grey-50);
+}
+
+input {
+  border: none;
+  outline: none;
+  font-size: inherit;
+  font-family: inherit;
+  min-width: 0;
+}
+
+button {
+  &.mat-button,
+  &.mat-stroked-button {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

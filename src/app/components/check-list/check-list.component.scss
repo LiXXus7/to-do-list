@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--grey-300);
+
+  .spacer {
+    flex: 1;
+  }
+
+  mat-icon {
+    color: var(--grey-500);
+    transition: color 200ms ease;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--warn-500);
+    }
+  }
+}
