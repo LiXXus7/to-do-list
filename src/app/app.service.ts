@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+export type ActiveSection = 'lists-overview' | 'list-detail'
+
 export interface List {
   isCreateList?: boolean;
   isEditMode?: boolean;
@@ -30,7 +32,9 @@ export class AppService {
   private savedLists = localStorage.getItem(STORAGE_KEYS.LISTS);
   private lists = this.savedLists ? JSON.parse(this.savedLists) : [{ ...createListConfig }];
 
+  activeSectionSubject = new BehaviorSubject<ActiveSection | null>(null);
   listsSubject = new BehaviorSubject<List[]>(this.lists);
+  filteredListIdsSubject = new BehaviorSubject<string[] | null>(null);
 
   constructor() {
     window.onbeforeunload = () => localStorage.setItem(
