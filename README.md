@@ -37,7 +37,7 @@ ________________________________________________________________________________
 
 /* NODE.JS */
 - node.js stellt unter anderem den node package manager (npm) zur verfügung
-- damit angular global auf dem pc verwendet werden kann, muss node.js installiert werden ( https://nodejs.org/en/ )
+- damit angular global auf dem pc verwendet werden kann, muss node.js installiert werden (https://nodejs.org/en/)
 
 
 ____________________________________________________________________________________________________________________________________
@@ -88,7 +88,7 @@ ________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________
 
 /* GIT */
-installation ( https://git-scm.com/download/win )
+installation (https://git-scm.com/download/win)
 
 /// CLONE PROJECTS (dein GIT repository als projekt auf den pc klonen):
 ---> logge dich mit deinem accound bei github ein.
@@ -121,28 +121,28 @@ installation ( https://git-scm.com/download/win )
 
 
 /// GIT WORKFLOW
----> wenn du änderungen vornehmen möchtest und dein projekt erweiterst, branche mit...
+<br>---> wenn du änderungen vornehmen möchtest und dein projekt erweiterst, branche mit...
 <br>`git checkout -b branch-name`
-...vom master weg
----> bist du fertig verwende...
+<br>...vom master weg
+<br>---> bist du fertig verwende...
 <br>`git add .`
-... um alle deine änderungen git mitzuteilen (der punkt bei git add "." ist wichtig und darf nicht vergessen werden, dieser bedeuted dass alle deine veränderung "geadded" werden sollen)
----> um die veränderungen zu bestätigen verwende:
+<br>... um alle deine änderungen git mitzuteilen (der punkt bei git add "." ist wichtig und darf nicht vergessen werden, dieser bedeuted dass alle deine veränderung "geadded" werden sollen)
+<br>---> um die veränderungen zu bestätigen verwende:
 <br>`git commit -a -m "deine nachricht, notiz, etc. für die änderungen"`
----> um die veränderungen auf git hochzuladen verwende:
+<br>---> um die veränderungen auf git hochzuladen verwende:
 <br>`git push origin branch-name`
----> jetzt kannst du den branch auf git in deinem repository sehen und einen pull request starten, und die veränderungen mit dem master mergen, also zusammenführen.
----> ist gemerged, navigieren mit...
+<br>---> jetzt kannst du den branch auf git in deinem repository sehen und einen pull request starten, und die veränderungen mit dem master mergen, also zusammenführen.
+<br>---> ist gemerged, navigieren mit...
 <br>`git checkout master`
 ...zum masterbranch
----> um den aktuellen master zu holen, verwende:
+<br>---> um den aktuellen master zu holen, verwende:
 <br>`git pull`
 /// MERKE: wenn gemeinsam auf einem Projekt gearbeitet wird, verwende...
 <br>`git fetch`
 ...vor git pull, um veränderungen von mitwirkenden zu registrieren
 
 ERROR FALL --> geheimtrick wenn etwas beim pushen nicht funktioniert -- folgende fehlermeldungen weisen auf das problem hin:
-  --> "ERROR: Repository not found. fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists."
+<br>  --> "ERROR: Repository not found. fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists."
 <br>`git remote set-url origin https://....git`
 ... dann nochmals einen push probieren
 
